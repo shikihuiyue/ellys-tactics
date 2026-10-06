@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>艾莉丝 · 冯 · 艾尔提亚 —— 开局选择</title>
+  <style>
+    :root {
+      --bg: #1a1a1f;
+      --panel: #25252c;
+      --text: #e8e6e3;
+      --muted: #9a9590;
+      --accent: #c9a86c;
+      --accent-dim: #8a7350;
+      --danger: #a64b4b;
+      --ok: #5a8a6a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--panel);
+      border: 1px solid #3a3a44;
+      border-radius: 8px;
+      padding: 28px;
+    }
+    h1 { margin: 0 0 8px; font-size: 24px; color: var(--accent); }
+    .subtitle { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+    .section { margin-bottom: 22px; }
+    .section-title {
+      font-size: 14px;
+      color: var(--accent-dim);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .choices {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .choice {
+      background: #2f2f38;
+      border: 1px solid #44444e;
+      border-radius: 6px;
+      padding: 14px;
+      cursor: pointer;
+      transition: border-color .15s, background .15s;
+    }
+    .choice:hover { border-color: var(--accent); background: #363640; }
+    .choice b { display: block; color: var(--accent); margin-bottom: 4px; }
+    .choice small { color: var(--muted); font-size: 12px; }
+    .difficulty {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .diff-btn {
+      padding: 8px 16px;
+      border: 1px solid #44444e;
+      background: #2f2f38;
+      color: var(--text);
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .diff-btn.active { border-color: var(--accent); background: #3a3a44; }
+    .rules {
+      background: #1f1f25;
+      border-left: 3px solid var(--accent-dim);
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .rules b { color: var(--text); }
+    .start {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      border: none;
+      background: var(--accent);
+      color: #1a1a1f;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .start:hover { background: #d4b37a; }
+    .note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+    }
+    .selected {
+      border-color: var(--accent) !important;
+      background: #3a3a44 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>艾莉丝 · 冯 · 艾尔提亚</h1>
+    <div class="subtitle">火焰纹章 · 酒馆战棋 v0.2.0（测试版）｜圣历 873 年秋，黎明关隘</div>
+
+    <div class="section">
+      <div class="section-title">选择开局</div>
+      <div class="choices" id="scenario-choices">
+        <div class="choice selected" data-scenario="assault">
+          <b>强攻开局</b>
+          <small>直接下令攻打黎明关隘北门。会死人，但最快。</small>
+        </div>
+        <div class="choice" data-scenario="negotiate">
+          <b>交涉开局</b>
+          <small>你去找守备队长格伦谈谈。用钱或话换那道门。</small>
+        </div>
+        <div class="choice" data-scenario="night">
+          <b>夜袭开局</b>
+          <small>趁着黎明前的雾，带人摸上城墙。</small>
+        </div>
+        <div class="choice" data-scenario="council">
+          <b>军议开局</b>
+          <small>先和艾莉丝、赛特、莉安坐下来算账，再决定。</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">难度</div>
+      <div class="difficulty" id="difficulty">
+        <button class="diff-btn active" data-diff="normal">普通</button>
+        <button class="diff-btn" data-diff="hard">困难</button>
+        <button class="diff-btn" data-diff="ironman">铁人</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">规则速查</div>
+      <div class="rules">
+        <b>武器三角：</b>剑克斧、斧克枪、枪克剑。<br>
+        <b>兵种克制：</b>重甲怕魔法，弓手贴身弱，骑兵林地慢。<br>
+        <b>士气：</b>欠饷三个月，部队士气低迷。阵亡会进一步打击士气。<br>
+        <b>名录石：</b>每个阵亡者的名字都会被刻上去，死亡是永久的。<br>
+        <b>交涉：</b>成功率由筹码、对方贪婪/恐惧/信任、以及你的说辞共同决定。
+      </div>
+    </div>
+
+    <button class="start" id="start-btn">开始</button>
+    <div class="note">若此页面加载失败，可直接在聊天中输入「强攻开局」「交涉开局」「夜袭开局」或「军议开局」。</note>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    let scenario = 'assault';
+    let difficulty = 'normal';
+
+    $('#scenario-choices').on('click', '.choice', function() {
+      $('#scenario-choices .choice').removeClass('selected');
+      $(this).addClass('selected');
+      scenario = $(this).data('scenario');
+    });
+
+    $('#difficulty').on('click', '.diff-btn', function() {
+      $('#difficulty .diff-btn').removeClass('active');
+      $(this).addClass('active');
+      difficulty = $(this).data('diff');
+    });
+
+    $('#start-btn').on('click', function() {
+      // 尝试向父窗口（酒馆）发送启动消息
+      const msg = '[ELLYSTART]' + scenario + '|' + difficulty;
+      try {
+        if (window.parent && window.parent !== window) {
+          window.parent.postMessage(msg, '*');
+        }
+      } catch (e) {}
+      // 同时在当前页显示提示
+      $(this).text('请在聊天框中输入：' + scenarioName(scenario));
+      $(this).prop('disabled', true);
+    });
+
+    function scenarioName(key) {
+      const map = { assault: '强攻开局', negotiate: '交涉开局', night: '夜袭开局', council: '军议开局' };
+      return map[key] || key;
+    }
+  </script>
+</body>
+</html>

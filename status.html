@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>艾莉丝部队状态</title>
+  <style>
+    :root {
+      --bg: #1a1a1f;
+      --panel: #25252c;
+      --text: #e8e6e3;
+      --muted: #9a9590;
+      --accent: #c9a86c;
+      --danger: #a64b4b;
+      --warn: #c9a24a;
+      --ok: #5a8a6a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 10px;
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 13px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid #3a3a44;
+      border-radius: 6px;
+      padding: 12px;
+    }
+    .title {
+      font-size: 14px;
+      color: var(--accent);
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0;
+      border-bottom: 1px solid #33333a;
+    }
+    .row:last-child { border-bottom: none; }
+    .label { color: var(--muted); }
+    .value { font-weight: bold; }
+    .morale-high { color: var(--ok); }
+    .morale-mid { color: var(--warn); }
+    .morale-low, .morale-broken { color: var(--danger); }
+    .names {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+    .chars {
+      margin-top: 8px;
+    }
+    .char {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      font-size: 12px;
+    }
+    .hpbar {
+      width: 60px;
+      height: 6px;
+      background: #3a3a44;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+    .hpbar i {
+      display: block;
+      height: 100%;
+      background: var(--ok);
+    }
+    .hpbar i.low { background: var(--warn); }
+    .hpbar i.crit { background: var(--danger); }
+    .empty { color: #666; font-style: italic; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="title">
+      <span>艾莉丝部队</span>
+      <span id="battle-turn">黎明关隘</span>
+    </div>
+
+    <div class="row">
+      <span class="label">能战</span>
+      <span class="value" id="fightable">17/17</span>
+    </div>
+    <div class="row">
+      <span class="label">能走</span>
+      <span class="value" id="mobile">11/11</span>
+    </div>
+    <div class="row">
+      <span class="label">士气</span>
+      <span class="value" id="morale">低</span>
+    </div>
+    <div class="row">
+      <span class="label">欠饷</span>
+      <span class="value" id="pay-due">3 个月</span>
+    </div>
+    <div class="row">
+      <span class="label">余粮</span>
+      <span class="value" id="rations">4 天</span>
+    </div>
+    <div class="row">
+      <span class="label">现钱</span>
+      <span class="value" id="funds">150 银</span>
+    </div>
+    <div class="row" style="flex-direction:column;align-items:flex-start;">
+      <span class="label">名录石</span>
+      <div class="names" id="name-stone">阿尔、贝卡、柯林、多娜、埃尔、菲恩</div>
+    </div>
+
+    <div class="chars" id="chars">
+      <!-- 角色状态由 JS 填充 -->
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+  <script>
+    // 默认状态：父窗口或卡内脚本会通过 postMessage 更新这些值
+    const state = {
+      army: {
+        fightable: 17,
+        mobile: 11,
+        morale: 'low',
+        pay_due_months: 3,
+        rations_days: 4,
+        funds: 150,
+        name_stone: ['阿尔', '贝卡', '柯林', '多娜', '埃尔', '菲恩']
+      },
+      battle: { turn: 1, map: '黎明关隘' },
+      chars: {
+        '艾莉丝': { hp: 24, maxHp: 28, class: '领主' },
+        '赛特': { hp: 22, maxHp: 22, class: '佣兵' },
+        '莉安': { hp: 16, maxHp: 16, class: '魔道士' }
+      }
+    };
+
+    function render() {
+      const a = state.army;
+      document.getElementById('fightable').textContent = a.fightable + '/17';
+      document.getElementById('mobile').textContent = a.mobile + '/11';
+      document.getElementById('rations').textContent = a.rations_days + ' 天';
+      document.getElementById('funds').textContent = a.funds + ' 银';
+      document.getElementById('pay-due').textContent = a.pay_due_months + ' 个月';
+
+      const moraleEl = document.getElementById('morale');
+      moraleEl.textContent = a.morale;
+      moraleEl.className = 'value morale-' + a.morale;
+
+      const stoneEl = document.getElementById('name-stone');
+      stoneEl.textContent = a.name_stone.length ? a.name_stone.join('、') : '无';
+
+      document.getElementById('battle-turn').textContent = state.battle.map + (state.battle.turn ? ' · 第 ' + state.battle.turn + ' 回合' : '');
+
+      const charsEl = document.getElementById('chars');
+      charsEl.innerHTML = '';
+      for (const [name, c] of Object.entries(state.chars || {})) {
+        const pct = Math.round((c.hp / c.maxHp) * 100);
+        const cls = pct <= 30 ? 'crit' : pct <= 60 ? 'low' : '';
+        charsEl.innerHTML += `
+          <div class="char">
+            <span>${name} · ${c.class}</span>
+            <div class="hpbar"><i class="${cls}" style="width:${pct}%"></i></div>
+            <span>${c.hp}/${c.maxHp}</span>
+          </div>
+        `;
+      }
+    }
+
+    window.addEventListener('message', function(e) {
+      if (typeof e.data === 'string' && e.data.startsWith('[ELLYSTATE]')) {
+        try {
+          const payload = JSON.parse(e.data.slice('[ELLYSTATE]'.length));
+          if (payload.army) Object.assign(state.army, payload.army);
+          if (payload.battle) Object.assign(state.battle, payload.battle);
+          if (payload.chars) state.chars = payload.chars;
+          render();
+        } catch (err) {}
+      }
+    });
+
+    render();
+  </script>
+</body>
+</html>
