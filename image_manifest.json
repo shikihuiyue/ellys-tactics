@@ -1,0 +1,196 @@
+{
+  "version": "v1.4.33",
+  "description": "艾莉丝·冯·艾尔提亚 全卡图片资源清单（可直接上传至 GitHub 仓库或第三方图床，并在世界书条目 #27 或 window.FeTactics.images.setExternalHost 中配置 baseUrl 一键调用）",
+  "pathTemplates": {
+    "heads": "{baseUrl}/heads/{id}_{emotion}.webp",
+    "avatars": "{baseUrl}/heads/{id}_normal.webp",
+    "portraits": "{baseUrl}/portraits/{id}.webp",
+    "patches": "{baseUrl}/patches/{id}_{emotion}.webp",
+    "pixels": "{baseUrl}/pixels/{id}.webp",
+    "backgrounds": "{baseUrl}/backgrounds/{key}.webp"
+  },
+  "characters": {
+    "u1": {
+      "name": "艾莉丝",
+      "title": "残印的王女",
+      "hasPortrait": true,
+      "emotions": [
+        "normal",
+        "joy",
+        "anger",
+        "sad",
+        "fun",
+        "shy",
+        "surprise"
+      ]
+    },
+    "u2": {
+      "name": "赛蒂",
+      "title": "讨债的银刃",
+      "hasPortrait": true,
+      "emotions": [
+        "normal",
+        "joy",
+        "anger",
+        "sad",
+        "fun",
+        "shy",
+        "surprise"
+      ]
+    },
+    "u3": {
+      "name": "莉安",
+      "title": "星火的学徒",
+      "hasPortrait": true,
+      "emotions": [
+        "normal",
+        "joy",
+        "anger",
+        "sad",
+        "fun",
+        "shy",
+        "surprise"
+      ]
+    },
+    "u4": {
+      "name": "卡琳",
+      "title": "北境怪力少女",
+      "hasPortrait": true,
+      "emotions": [
+        "normal",
+        "joy",
+        "anger",
+        "sad",
+        "fun",
+        "shy",
+        "surprise"
+      ]
+    },
+    "u5": {
+      "name": "托薇",
+      "title": "坚盾民兵少女",
+      "hasPortrait": true,
+      "emotions": [
+        "normal",
+        "joy",
+        "anger",
+        "sad",
+        "fun",
+        "shy",
+        "surprise"
+      ]
+    },
+    "u6": {
+      "name": "蒂娅",
+      "title": "苍林的冷羽",
+      "hasPortrait": true,
+      "emotions": [
+        "normal",
+        "joy",
+        "anger",
+        "sad",
+        "fun",
+        "shy",
+        "surprise"
+      ]
+    },
+    "u7": {
+      "name": "布琳",
+      "title": "白银不动铁壁",
+      "hasPortrait": true,
+      "emotions": [
+        "normal",
+        "joy",
+        "anger",
+        "sad",
+        "fun",
+        "shy",
+        "surprise"
+      ]
+    },
+    "u8": {
+      "name": "萝丝",
+      "title": "绯红落魄游骑",
+      "hasPortrait": true,
+      "emotions": [
+        "normal",
+        "joy",
+        "anger",
+        "sad",
+        "fun",
+        "shy",
+        "surprise"
+      ]
+    },
+    "u9": {
+      "name": "珂尔",
+      "title": "百战霜发军士长",
+      "hasPortrait": true,
+      "emotions": [
+        "normal",
+        "joy",
+        "anger",
+        "sad",
+        "fun",
+        "shy",
+        "surprise"
+      ]
+    },
+    "s1": {
+      "name": "薇尔",
+      "title": "戴罪的赤链剑奴",
+      "hasPortrait": false,
+      "emotions": [
+        "normal",
+        "joy",
+        "anger",
+        "sad",
+        "fun",
+        "shy",
+        "surprise"
+      ]
+    },
+    "s2": {
+      "name": "诺拉",
+      "title": "负枷的铁壁盾奴",
+      "hasPortrait": false,
+      "emotions": [
+        "normal",
+        "joy",
+        "anger",
+        "sad",
+        "fun",
+        "shy",
+        "surprise"
+      ]
+    },
+    "eboss": {
+      "name": "奥菲莉亚",
+      "title": "锁门的烬鳞巨姬",
+      "hasPortrait": true,
+      "emotions": [
+        "normal",
+        "joy",
+        "anger",
+        "sad",
+        "fun",
+        "shy",
+        "surprise"
+      ]
+    },
+    "mob": {
+      "name": "无脸杂兵",
+      "title": "未收录立绘NPC/士兵默认回退头像",
+      "hasPortrait": false,
+      "emotions": [
+        "normal",
+        "joy",
+        "anger",
+        "sad",
+        "fun",
+        "shy",
+        "surprise"
+      ]
+    }
+  }
+}
