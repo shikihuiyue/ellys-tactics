@@ -1,0 +1,183 @@
+{
+  "version": "3.1.0",
+  "defaultGithubRepoRoot": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main",
+  "defaultJsDelivrRoot": "https://testingcf.jsdelivr.net/gh/shikihuiyue/ellys-tactics@main",
+  "uploadInstruction": "请将 image_host_assets 文件夹整体上传至 GitHub 仓库 shikihuiyue/ellys-tactics 的 main 分支根目录下（即形成 main/image_host_assets/companions/{slug}/... 结构）。",
+  "NamingConvention": {
+    "directory": "image_host_assets/companions/{slug}/",
+    "avatar": "{slug}_chibi_portrait_transparent.png 或 立绘.png",
+    "portrait": "立绘.png 或 {slug}_chibi_portrait_1024.png",
+    "idle": "{slug}_idle.gif (洛茜为 rossi_idle_front.gif)",
+    "moveUp": "{slug}_move_up.gif (若只有单向移动图则共用 {slug}_move.gif / rossi_move_side.gif)",
+    "moveDown": "{slug}_move_down.gif",
+    "moveLeft": "{slug}_move_left.gif (若与 moveRight 填入相同单向移动 GIF，引擎在左移时会自动水平翻转)",
+    "moveRight": "{slug}_move_right.gif",
+    "attack": "{slug}_attack.gif (洛茜为 rossi_attack_slash.gif)",
+    "skill": "{slug}_skill.gif (洛茜为 rossi_attack_spin.gif)",
+    "hit": "{slug}_hit.gif / {slug}_hurt.gif"
+  },
+  "companions": {
+    "洛茜": {
+      "id": "u2",
+      "slug": "rossi",
+      "avatarUrl": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_chibi_portrait_transparent.png",
+      "portraitUrl": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_chibi_portrait_1024.png",
+      "pixelSprite": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_idle_front.gif",
+      "pixelActions": {
+        "idle": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_idle_front.gif",
+        "moveUp": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_move_side.gif",
+        "moveDown": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_move_side.gif",
+        "moveLeft": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_move_side.gif",
+        "moveRight": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_move_side.gif",
+        "attack": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_attack_slash.gif",
+        "skill": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_attack_spin.gif",
+        "hit": ""
+      },
+      "ruleTemplate": {
+        "idle": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_idle_front.gif",
+        "moveUp": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_move_up.gif",
+        "moveDown": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_move_down.gif",
+        "moveLeft": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_move_left.gif",
+        "moveRight": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_move_right.gif",
+        "attack": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_attack_slash.gif",
+        "skill": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_attack_spin.gif",
+        "hit": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/rossi/rossi_hit.gif"
+      }
+    },
+    "妃咲": {
+      "id": "u3",
+      "slug": "kisaki",
+      "avatarUrl": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/kisaki/kisaki_chibi_portrait_transparent.png",
+      "portraitUrl": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/kisaki/立绘.png",
+      "pixelSprite": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/kisaki/kisaki_chibi_portrait_transparent.png",
+      "pixelActions": {
+        "idle": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/kisaki/kisaki_chibi_portrait_transparent.png",
+        "moveUp": "",
+        "moveDown": "",
+        "moveLeft": "",
+        "moveRight": "",
+        "attack": "",
+        "skill": "",
+        "hit": ""
+      },
+      "ruleTemplate": {
+        "idle": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/kisaki/kisaki_idle.gif",
+        "moveUp": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/kisaki/kisaki_move_up.gif",
+        "moveDown": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/kisaki/kisaki_move_down.gif",
+        "moveLeft": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/kisaki/kisaki_move_left.gif",
+        "moveRight": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/kisaki/kisaki_move_right.gif",
+        "attack": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/kisaki/kisaki_attack.gif",
+        "skill": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/kisaki/kisaki_skill.gif",
+        "hit": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/kisaki/kisaki_hit.gif"
+      }
+    },
+    "长门": {
+      "id": "u4",
+      "slug": "nagato",
+      "avatarUrl": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/nagato/nagato_chibi_portrait_transparent.png",
+      "portraitUrl": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/nagato/立绘.png",
+      "pixelSprite": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/nagato/nagato_idle.gif",
+      "pixelActions": {
+        "idle": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/nagato/nagato_idle.gif",
+        "moveUp": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/nagato/nagato_move.gif",
+        "moveDown": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/nagato/nagato_move.gif",
+        "moveLeft": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/nagato/nagato_move.gif",
+        "moveRight": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/nagato/nagato_move.gif",
+        "attack": "",
+        "skill": "",
+        "hit": ""
+      },
+      "ruleTemplate": {
+        "idle": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/nagato/nagato_idle.gif",
+        "moveUp": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/nagato/nagato_move_up.gif",
+        "moveDown": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/nagato/nagato_move_down.gif",
+        "moveLeft": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/nagato/nagato_move_left.gif",
+        "moveRight": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/nagato/nagato_move_right.gif",
+        "attack": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/nagato/nagato_attack.gif",
+        "skill": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/nagato/nagato_skill.gif",
+        "hit": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/nagato/nagato_hit.gif"
+      }
+    },
+    "铃兰": {
+      "id": "u5",
+      "slug": "suzuran",
+      "avatarUrl": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/suzuran/铃兰_立绘.png",
+      "portraitUrl": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/suzuran/铃兰_立绘.png",
+      "pixelSprite": "",
+      "pixelActions": {
+        "idle": "",
+        "moveUp": "",
+        "moveDown": "",
+        "moveLeft": "",
+        "moveRight": "",
+        "attack": "",
+        "skill": "",
+        "hit": ""
+      },
+      "ruleTemplate": {
+        "idle": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/suzuran/suzuran_idle.gif",
+        "moveUp": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/suzuran/suzuran_move_up.gif",
+        "moveDown": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/suzuran/suzuran_move_down.gif",
+        "moveLeft": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/suzuran/suzuran_move_left.gif",
+        "moveRight": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/suzuran/suzuran_move_right.gif",
+        "attack": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/suzuran/suzuran_attack.gif",
+        "skill": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/suzuran/suzuran_skill.gif",
+        "hit": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/suzuran/suzuran_hit.gif"
+      }
+    },
+    "巫恋": {
+      "id": "u6",
+      "slug": "shamare",
+      "avatarUrl": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/shamare/shamare_chibi_portrait_transparent.png",
+      "portraitUrl": "",
+      "pixelSprite": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/shamare/shamare_idle.gif",
+      "pixelActions": {
+        "idle": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/shamare/shamare_idle.gif",
+        "moveUp": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/shamare/shamare_move.gif",
+        "moveDown": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/shamare/shamare_move.gif",
+        "moveLeft": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/shamare/shamare_move.gif",
+        "moveRight": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/shamare/shamare_move.gif",
+        "attack": "",
+        "skill": "",
+        "hit": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/shamare/shamare_hurt.gif"
+      },
+      "ruleTemplate": {
+        "idle": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/shamare/shamare_idle.gif",
+        "moveUp": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/shamare/shamare_move_up.gif",
+        "moveDown": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/shamare/shamare_move_down.gif",
+        "moveLeft": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/shamare/shamare_move_left.gif",
+        "moveRight": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/shamare/shamare_move_right.gif",
+        "attack": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/shamare/shamare_attack.gif",
+        "skill": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/shamare/shamare_skill.gif",
+        "hit": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/shamare/shamare_hurt.gif"
+      }
+    },
+    "奥薇尔": {
+      "id": "u7",
+      "slug": "orvelle",
+      "avatarUrl": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/orvelle/orvelle_chibi_portrait_transparent.png",
+      "portraitUrl": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/orvelle/orvelle_chibi_portrait_1024.png",
+      "pixelSprite": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/orvelle/orvelle_chibi_portrait_transparent.png",
+      "pixelActions": {
+        "idle": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/orvelle/orvelle_chibi_portrait_transparent.png",
+        "moveUp": "",
+        "moveDown": "",
+        "moveLeft": "",
+        "moveRight": "",
+        "attack": "",
+        "skill": "",
+        "hit": ""
+      },
+      "ruleTemplate": {
+        "idle": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/orvelle/orvelle_idle.gif",
+        "moveUp": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/orvelle/orvelle_move_up.gif",
+        "moveDown": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/orvelle/orvelle_move_down.gif",
+        "moveLeft": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/orvelle/orvelle_move_left.gif",
+        "moveRight": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/orvelle/orvelle_move_right.gif",
+        "attack": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/orvelle/orvelle_attack.gif",
+        "skill": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/orvelle/orvelle_skill.gif",
+        "hit": "https://raw.githubusercontent.com/shikihuiyue/ellys-tactics/main/image_host_assets/companions/orvelle/orvelle_hit.gif"
+      }
+    }
+  }
+}
